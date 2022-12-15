@@ -12,3 +12,13 @@
     gap: 0rem;
     flex-wrap: wrap;
 }
+
+#main > div {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+
+#main > div:hover{
+    background-color: black;
+}

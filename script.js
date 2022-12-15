@@ -1,4 +1,5 @@
 
+
 function divGrid(k){
     for(let i = 0; i < k; i++){
         const div = document.createElement('div');
@@ -6,11 +7,15 @@ function divGrid(k){
         div.style.height = "80px";
         div.style.background = "white";
         div.style.border = "1px solid black";
-        div.innerHTML = `${i}`;
+        div.addEventListener("mouseover", (event) => {
+            div.style.background = "black";
+        });
         document.getElementById("main").appendChild(div);
     }
 }
 
 
-let i = 64;
+
+
+let i = 100;
 divGrid(i);
