@@ -3,14 +3,29 @@
     margin: 0;
 }
 
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 #main{
     height: 50%;
-    width: 100vw;
+    width: 50%;
+    /*
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 0rem;
     flex-wrap: wrap;
+    */
+    display: grid;
+    grid-template-columns: repeat(15, 50px);
+    grid-template-rows: repeat(10, 50px);
 }
 
 #main > div {
@@ -21,4 +36,18 @@
 
 #main > div:hover{
     background-color: black;
+}
+
+.btn-container{
+    top: 100px;
+    position: absolute;
+}
+
+button{
+    padding: 10px 20px;
+    background-color: red;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+
 }
