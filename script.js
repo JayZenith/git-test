@@ -14,7 +14,7 @@ function divGrid(k){
     }
 }
 
-function okd(k){
+function clearFunction(k){
     let nodes = document.getElementById("main").childNodes;
     for(let i = 0; i < nodes.length; i++){
         if(nodes[i].nodeName.toLocaleLowerCase() == `div`){
@@ -24,8 +24,18 @@ function okd(k){
     }
 }
 
-let userInput = prompt(`Enter amount of divs`);
-let i = userInput;
-divGrid(i);
-const reset = document.getElementById("btn");
-reset.addEventListener("click", okd);
+function resetFunction()
+{
+    while(document.getElementById("main").firstChild)
+        document.getElementById("main").removeChild(document.getElementById("main").firstChild);
+    let userInput = prompt('Enter amount of divs');
+    divGrid(userInput);
+}
+
+
+let userInput = prompt('Enter amount of divs');
+divGrid(userInput);
+const clearBtn = document.getElementById("btn");
+clearBtn.addEventListener("click", clearFunction);
+const resetBtn = document.getElementById("reset");
+resetBtn.addEventListener("click", resetFunction);
