@@ -1,10 +1,12 @@
 
 
 function divGrid(k){
-    for(let i = 0; i < k; i++){
+    for(let i = 0; i < (k*k); i++){
         let div = document.createElement('div');
-        div.style.width = "50px";
-        div.style.height = "50px";
+        div.style.width = "10px";
+        /*div.style.height = "10px";*/
+        div.style.height = "5px";
+
         div.style.background = "white";
         div.style.border = "0px solid black";
         div.addEventListener("mouseover", (event) => {
@@ -28,13 +30,28 @@ function resetFunction()
 {
     while(document.getElementById("main").firstChild)
         document.getElementById("main").removeChild(document.getElementById("main").firstChild);
-    let userInput = prompt('Enter amount of divs');
-    divGrid(userInput);
+    same();
 }
 
 
-let userInput = prompt('Enter amount of divs');
-divGrid(userInput);
+function same()
+{
+    userInput = prompt('Enter amount of divs');
+    main = document.getElementById("main");
+    main.style.setProperty('grid-template-columns', `repeat(${userInput}, 10px)`);
+    /*main.style.setProperty('grid-template-rows', `repeat(${userInput}, 10px)`);*/
+    main.style.setProperty('grid-template-rows', `repeat(${userInput}, 5px)`);
+    /*heightMain = parseInt(userInput) * 10;*/
+    heightMain = parseInt(userInput) * 5;
+    widthMain = parseInt(userInput) * 10;
+    console.log(heightMain.toString());
+    main.style.height = heightMain.toString() + "px";
+    main.style.width = widthMain.toString() + "px";
+    divGrid(userInput);
+}
+
+let userInput, main, heightMain, widthMain;
+same();
 const clearBtn = document.getElementById("btn");
 clearBtn.addEventListener("click", clearFunction);
 const resetBtn = document.getElementById("reset");
